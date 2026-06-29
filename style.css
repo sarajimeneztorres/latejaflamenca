@@ -331,3 +331,30 @@ a[href^="tel"]:hover,
 a[href^="mailto"]:hover {
     color: var(--primary-color);
 }
+
+/* =========================================
+   10. SECCIÓN: VIDEOS (RITMOS)
+   ========================================= */
+.video-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+
+.video-wrapper {
+    flex: 1 1 350px; /* Tamaño base para que no queden ni muy pequeños ni gigantes */
+    max-width: 500px;
+    aspect-ratio: 16 / 9; /* Mantiene la proporción exacta de YouTube automáticamente */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
