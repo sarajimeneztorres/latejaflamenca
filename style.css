@@ -103,14 +103,6 @@ body {
 /* =========================================
    4. ESTRUCTURA PRINCIPAL Y SECCIONES
    ========================================= */
-.main-content {
-    background-image: var(--bg-image-url);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Efecto parallax */
-}
-
 .section {
     min-height: 100vh;
     display: flex;
