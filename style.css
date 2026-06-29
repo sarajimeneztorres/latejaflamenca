@@ -1,0 +1,321 @@
+/* =========================================
+   1. VARIABLES DE COLOR Y FUENTES
+   ========================================= */
+:root {
+    --primary-color: #8B0000; /* Granate flamenco */
+    --text-dark: #333333;
+    --text-light: #F9F9F9;
+    --navbar-bg: #FFFFFF;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* URL de la imagen de fondo */
+    --bg-image-url: url('https://media.istockphoto.com/id/2167060831/es/foto/bodeg%C3%B3n-flamenco-espa%C3%B1ol-con-guitarra-cl%C3%A1sica-y-una-silla-enea-t%C3%ADpica-andaluza.jpg?s=2048x2048&w=is&k=20&c=6N9e4S0X4Y-L4o3U1I1aO5x_YpX_L7S_A_N_W5J9A0A=');
+}
+
+/* =========================================
+   2. RESET Y ESTILOS GENERALES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* =========================================
+   3. MENÚ DE NAVEGACIÓN Y LOGO
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbar-bg);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre la foto y el texto */
+}
+
+.logo-img {
+    height: 70px;
+    width: auto;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Redes Sociales en el menú */
+.nav-social a {
+    display: flex;
+    align-items: center;
+    color: var(--text-dark);
+}
+
+.nav-social a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* =========================================
+   4. ESTRUCTURA PRINCIPAL Y SECCIONES
+   ========================================= */
+.main-content {
+    background-image: var(--bg-image-url);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efecto parallax */
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px; 
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subrayado decorativo */
+.section h2::after {
+    content: '';
+    width: 60%;
+    height: 4px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -15px;
+    left: 20%;
+}
+
+/* Capas de opacidad */
+.light-overlay {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--text-dark);
+}
+
+.dark-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: var(--text-light); 
+}
+
+.dark-overlay h2 {
+    color: var(--text-light);
+}
+
+/* =========================================
+   5. SECCIÓN: QUIÉNES SOMOS
+   ========================================= */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.03);
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   6. SECCIÓN: CLASES (TARJETAS)
+   ========================================= */
+.grid-cards {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-dark);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    flex: 1 1 280px;
+    border-top: 5px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* =========================================
+   7. SECCIÓN: CONTACTO Y MAPA
+   ========================================= */
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-container iframe {
+    display: block;
+}
+
+.ig-contact {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.ig-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.ig-contact a:hover {
+    color: var(--primary-color);
+}
+
+/* =========================================
+   8. PIE DE PÁGINA (FOOTER)
+   ========================================= */
+footer {
+    background-color: #111;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   9. RESPONSIVE DESIGN (MÓVILES)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Ajustes del menú */
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* Ajustes de las secciones */
+    .section {
+        min-height: auto;
+        padding: 80px 20px;
+    }
+    
+    .section h2 {
+        font-size: 2.2rem;
+    }
+}
